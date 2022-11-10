@@ -212,7 +212,7 @@ def transcribe(
                     )
                     last_slice = current_slice
                 last_timestamp_position = (
-                    tokens[last_slice - 1].item() - tokenizer.timestamp_begin
+                    tokens[last_slice].item() - tokenizer.timestamp_begin
                 )
                 seek += last_timestamp_position * input_stride
                 all_tokens.extend(tokens[: last_slice + 1].tolist())
